@@ -1,3 +1,22 @@
+# Indexare: URL canonic https://zypherolab.com/ (fără www), aliniat cu GSC proprietate prefix URL.
+#
+# Robots.txt NU „înscrie” site-ul într-un motor AI — doar permite sau refuză crawl-ul pentru fiecare user-agent.
+# Pentru un rezumat dedicat LLM-urilor: https://zypherolab.com/llms.txt (inclus și în sitemap).
+
+# Boți folosiți de servicii AI (antrenare, căutare, citări) — acces explicit la site-ul public.
+# Lista se actualizează în timp; verifică periodic documentația fiecărui furnizor.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
 

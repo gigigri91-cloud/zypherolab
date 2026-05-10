@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/en/web-services#webpage",
+      "url": "https://zypherolab.com/en/web-services",
+      "name": "Web Services | ZypheroLab",
+      "description": "ZypheroLab web services: conversion websites, technical SEO, and growth iteration for international businesses.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" },
+      "about": { "@id": "https://zypherolab.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zypherolab.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Web Services", "item": "https://zypherolab.com/en/web-services" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is included in the baseline service package?", "acceptedAnswer": { "@type": "Answer", "text": "The baseline package includes commercial page structure, conversion copy, mobile-first implementation, and technical SEO setup." } },
+        { "@type": "Question", "name": "How fast can we see the first working version?", "acceptedAnswer": { "@type": "Answer", "text": "For a standard scope, the first functional version is usually delivered in 3-5 business days." } },
+        { "@type": "Question", "name": "Do you work with international clients?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work remotely with clients worldwide. Communication is in English or Romanian." } }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="en"
+  title="Web Services | ZypheroLab"
+  description="ZypheroLab web services: conversion-focused websites, technical SEO, and growth support for international businesses. Delivered in 3-5 business days."
+  canonical="https://zypherolab.com/en/web-services"
+  hreflangRo="https://zypherolab.com/servicii-web"
+  hreflangEn="https://zypherolab.com/en/web-services"
+  ogImageAlt="ZypheroLab — premium web services for international businesses"
+  activePage="services"
+  schemaJson={schema}
+>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Web services built for lead growth</h1>
+        <p class="hero-subtitle">Clear commercial architecture, strong performance, and measurable conversion outcomes. Available worldwide, remote-first.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/en/web-pricing">View pricing</a>
+          <a class="btn btn-secondary" href="/en/contact">Request quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services reveal" aria-labelledby="service-scope">
+    <div class="section-inner">
+      <h2 id="service-scope">Scope</h2>
+      <div class="cards cards--3">
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🎯</span>
+          <h3>Conversion website</h3>
+          <p>Commercial structure, CTA hierarchy, mobile-first UX — built to generate leads, not just look good.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🔍</span>
+          <h3>Technical SEO</h3>
+          <p>Canonical, hreflang, schema, Core Web Vitals and indexing setup for money pages.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">📈</span>
+          <h3>Growth iteration</h3>
+          <p>Monthly optimization sprints based on GSC data. No analytics bloat, only signals that matter.</p>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a class="btn btn-secondary" href="/en/case-studies">See case studies →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq reveal" aria-labelledby="faq-title">
+    <div class="section-inner">
+      <h2 id="faq-title">Frequently asked questions about services</h2>
+      <div class="cards cards--3">
+        <article class="card">
+          <h3>What is included in the baseline service package?</h3>
+          <p>The baseline package includes commercial page structure, conversion copy, mobile-first implementation, and technical SEO setup.</p>
+        </article>
+        <article class="card">
+          <h3>How fast can we see the first working version?</h3>
+          <p>For a standard scope, the first functional version is usually delivered in 3-5 business days.</p>
+        </article>
+        <article class="card">
+          <h3>Do you work with international clients?</h3>
+          <p>Yes. We work remotely with clients worldwide. Communication is in English or Romanian.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

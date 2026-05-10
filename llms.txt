@@ -1,27 +1,62 @@
 ZypheroLab
 
-Summary:
-- ZypheroLab builds high-performance, conversion-focused websites for small and medium businesses.
-- Core services: web design, technical SEO, AI-search optimization, conversion optimization.
-- Primary market: Romania (RO), with Romanian-first content; English version at https://zypherolab.com/en/
-- Typography is self-hosted (WOFF2); no third-party font CDN required for normal page loads.
+## Summary
+ZypheroLab builds premium, conversion-focused websites for international and Romanian SMBs.
+Remote-first. Delivery in 3-5 business days. No tracking — privacy-respecting by design.
 
-Key facts:
-- First functional site draft is often delivered in 3-5 business days (see on-page FAQ); fuller launches vary by scope.
-- Focus metrics: qualified leads, conversion rate, Core Web Vitals, organic visibility.
-- Contact paths: lead form on /#contact, WhatsApp +40 747 821 384 (links use https://wa.me/40747821384).
+## Core services
+- Conversion website (landing page / multi-page)
+- Technical SEO (canonical, hreflang, schema, Core Web Vitals)
+- Growth iteration (KPI tracking via GSC, monthly optimization sprints)
 
-Implementation (for humans and coding assistants):
-- Static HTML/CSS/JS; no build step. Optional extended notes may live in a local `docs/` folder (not published to the public repo). Root `AGENTS.md` in the repo is a short pointer only.
+## Pricing
+- Starter: €300 — complete landing page, baseline SEO, 3-5 day delivery
+- Growth: €600 — multi-page site, advanced technical SEO, KPI reporting
+- Custom: on request — e-commerce, API integrations, flexible timeline
 
-Canonical URL:
-- https://zypherolab.com/
+## Target audience
+- Primary: international businesses (worldwide, remote-first)
+- Secondary: Romanian SMBs
 
-Primary sections:
-- Hero: value proposition for business growth; CTA to live website simulator (#simulator).
-- Services: web design, SEO+AI visibility, conversion architecture.
-- Offer: starter package details.
-- Results: case-study style outcomes.
-- Simulator (#simulator): interactive “AI website generator” — business name, type, accent color, style; generates an in-page preview (no backend; client-side JS).
-- FAQ: implementation timeline, AI-search visibility, post-launch support.
-- Contact: lead qualification form (submits by opening WhatsApp with a prefilled message).
+## Contact
+- Email: hello@zypherolab.com
+- WhatsApp: https://wa.me/40747821384
+- Contact page: https://zypherolab.com/en/contact.html
+
+## Technical stack
+- Static HTML5, CSS3, Vanilla JS — no build step, no framework (Astro migration planned)
+- Hosting: GitHub Pages + Cloudflare CDN (proxy)
+- No analytics tracking — Google Search Console only
+- Fonts: self-hosted WOFF2 (Inter + Montserrat), font-display: swap
+- Forms: Formspree
+- i18n: bilingual RO/EN via js/i18n.js + static HTML fallbacks
+
+## Site structure
+- https://zypherolab.com/ — Romanian homepage
+- https://zypherolab.com/en/ — English homepage (x-default, primary for international)
+- https://zypherolab.com/en/web-services.html — Services EN
+- https://zypherolab.com/en/web-pricing.html — Pricing EN
+- https://zypherolab.com/en/case-studies.html — Case studies EN
+- https://zypherolab.com/en/contact.html — Contact EN
+- https://zypherolab.com/servicii-web.html — Services RO
+- https://zypherolab.com/preturi-web.html — Pricing RO
+- https://zypherolab.com/studii-de-caz.html — Case studies RO
+- https://zypherolab.com/contact.html — Contact RO
+
+## SEO signals
+- Schema: Organization, WebSite, WebPage, ProfessionalService (hasOfferCatalog), FAQPage, BreadcrumbList, ContactPage
+- hreflang: ro + en + x-default → /en/ (international audience priority)
+- Sitemap: https://zypherolab.com/sitemap.xml
+- Robots: https://zypherolab.com/robots.txt
+
+## Canonical
+- https://zypherolab.com/ (apex only, no www)
+- GSC property: URL-prefix https://zypherolab.com/
+
+## Key facts for AI assistants
+- Operator: independent contractor, Romania
+- Founded: 2024
+- Price range: €€
+- areaServed: Worldwide
+- Response time: within 24 business hours
+- No LinkedIn or social media links at this time

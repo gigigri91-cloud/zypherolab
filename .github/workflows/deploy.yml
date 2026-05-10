@@ -1,0 +1,75 @@
+name: Deploy ZypheroLab to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Astro site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: _astro-src/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: _astro-src
+
+      - name: Build Astro
+        run: npm run build
+        working-directory: _astro-src
+
+      - name: Copy static assets to dist
+        run: |
+          # Copy fonts (self-hosted)
+          cp -r fonts _astro-src/dist/fonts
+          # Copy CSS (legacy static files reused)
+          cp -r css _astro-src/dist/css
+          # Copy JS (vanilla scripts reused across pages)
+          cp -r js _astro-src/dist/js
+          # Copy images
+          cp -r img _astro-src/dist/img
+          # Copy favicons + root files
+          cp favicon.ico _astro-src/dist/ 2>/dev/null || true
+          cp favicon-32.png _astro-src/dist/ 2>/dev/null || true
+          cp favicon-192.png _astro-src/dist/ 2>/dev/null || true
+          cp apple-touch-icon.png _astro-src/dist/ 2>/dev/null || true
+          cp CNAME _astro-src/dist/
+          cp robots.txt _astro-src/dist/
+          cp llms.txt _astro-src/dist/
+          cp _headers _astro-src/dist/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _astro-src/dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

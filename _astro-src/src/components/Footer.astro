@@ -1,0 +1,70 @@
+---
+// Footer.astro — Mobile-first footer, EN primary
+export interface Props {
+  lang: 'ro' | 'en';
+}
+const { lang } = Astro.props;
+
+const linksEN = [
+  { href: '/en/web-services', label: 'Services' },
+  { href: '/en/web-pricing', label: 'Pricing' },
+  { href: '/en/case-studies', label: 'Case Studies' },
+  { href: '/en/contact', label: 'Contact' },
+];
+
+const linksRO = [
+  { href: '/servicii-web', label: 'Servicii' },
+  { href: '/preturi-web', label: 'Prețuri' },
+  { href: '/studii-de-caz', label: 'Studii de caz' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const links = lang === 'en' ? linksEN : linksRO;
+const tagline = lang === 'en'
+  ? 'Premium websites for businesses worldwide.'
+  : 'Website-uri de creștere pentru business-uri locale și internaționale.';
+const copy = lang === 'en'
+  ? 'All rights reserved. Independent contractor, Romania.'
+  : 'Toate drepturile rezervate. Activitate independentă, România.';
+const privacyLabel = lang === 'en' ? 'Privacy Policy' : 'Politică de confidențialitate';
+const termsLabel = lang === 'en' ? 'Terms of Service' : 'Termeni și condiții';
+const privacyHref = lang === 'en' ? '/en/privacy' : '/privacy';
+const termsHref = lang === 'en' ? '/en/terms' : '/termeni';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <a href={lang === 'en' ? '/en/' : '/'} class="brand" aria-label="ZypheroLab">
+        <span class="brand-wordmark">Zyphero<span class="brand-wordmark-accent">Lab</span></span>
+      </a>
+      <p class="footer-tagline">{tagline}</p>
+      <a href="mailto:hello@zypherolab.com" class="footer-email">hello@zypherolab.com</a>
+    </div>
+
+    <nav class="footer-nav" aria-label={lang === 'en' ? 'Footer navigation' : 'Navigare footer'}>
+      {links.map(l => <a href={l.href}>{l.label}</a>)}
+    </nav>
+
+    <div class="footer-legal">
+      <p class="footer-copy">© <span id="footer-year"></span> ZypheroLab. {copy}</p>
+      <nav class="footer-legal-links" aria-label="Legal">
+        <a href={privacyHref}>{privacyLabel}</a>
+        <a href={termsHref}>{termsLabel}</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a
+  href="https://wa.me/40747821384?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20for%20a%20website."
+  class="whatsapp"
+  aria-label={lang === 'en' ? 'Chat on WhatsApp' : 'Chat pe WhatsApp'}
+>
+  <span class="whatsapp-icon" aria-hidden="true"></span>
+</a>
+
+<script>
+  const el = document.getElementById('footer-year');
+  if (el) el.textContent = String(new Date().getFullYear());
+</script>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Page Not Found | ZypheroLab"
+  description="The page you're looking for doesn't exist. Return to ZypheroLab homepage or contact us for help."
+  canonical="https://zypherolab.com/en/"
+  hreflangRo="https://zypherolab.com/"
+  hreflangEn="https://zypherolab.com/en/"
+  noindex={true}
+>
+  <div class="error-page">
+    <p class="error-code" aria-hidden="true">404</p>
+    <h1 class="error-title">Page not found</h1>
+    <p class="error-desc">The page you're looking for doesn't exist or has been moved.</p>
+    <div class="error-actions">
+      <a class="btn" href="/en/">Go to homepage</a>
+      <a class="btn btn-secondary" href="/en/contact">Contact us</a>
+    </div>
+    <p class="error-links">
+      Or explore:
+      <a href="/en/web-services">Services</a> ·
+      <a href="/en/web-pricing">Pricing</a> ·
+      <a href="/en/case-studies">Case studies</a>
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-page {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+  }
+  .error-code {
+    font-size: clamp(5rem, 18vw, 9rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin: 0;
+  }
+  .error-title { font-size: clamp(1.3rem, 3vw, 2rem); margin: 0; }
+  .error-desc { color: var(--text-secondary, #64748b); max-width: 440px; margin: 0; }
+  .error-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 320px;
+  }
+  @media (min-width: 480px) {
+    .error-actions { flex-direction: row; max-width: none; justify-content: center; }
+  }
+  .error-links { font-size: 0.9rem; color: var(--text-secondary, #64748b); }
+  .error-links a { color: var(--accent, #2563eb); }
+</style>
