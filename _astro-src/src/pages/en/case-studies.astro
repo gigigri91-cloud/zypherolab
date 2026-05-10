@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/en/case-studies#webpage",
+      "url": "https://zypherolab.com/en/case-studies",
+      "name": "Case Studies | ZypheroLab",
+      "description": "ZypheroLab case studies: challenge, solution, and measurable outcome for conversion-oriented web projects.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zypherolab.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://zypherolab.com/en/case-studies" }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="en"
+  title="Case Studies | ZypheroLab"
+  description="ZypheroLab case studies: challenge, solution, and measurable outcome across conversion-oriented website projects for international and local businesses."
+  canonical="https://zypherolab.com/en/case-studies"
+  hreflangRo="https://zypherolab.com/studii-de-caz"
+  hreflangEn="https://zypherolab.com/en/case-studies"
+  ogImageAlt="ZypheroLab — web design case studies with measurable outcomes"
+  activePage="case-studies"
+  schemaJson={schema}
+>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Case studies — real web projects</h1>
+        <p class="hero-subtitle">Every project starts from a real problem and ends with a measurable outcome.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/en/contact">Discuss your project</a>
+          <a class="btn btn-secondary" href="/en/web-pricing">View pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio reveal" aria-labelledby="cases-title">
+    <div class="section-inner">
+      <h2 id="cases-title">Projects delivered</h2>
+      <div class="portfolio-grid">
+        <article class="portfolio-item">
+          <h3>Restaurant landing page</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Challenge:</span> Old site was slow on mobile; reservations were getting lost on the phone.</li>
+            <li><span class="portfolio-case-type">Solution:</span> Landing with clear menu, reservation CTA, and easy-to-scan details.</li>
+            <li><span class="portfolio-case-type">Outcome:</span> One unified contact flow; a stable mobile-first experience.</li>
+          </ul>
+          <a href="/en/contact" class="portfolio-link">Details on request →</a>
+        </article>
+        <article class="portfolio-item">
+          <h3>Law firm website</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Challenge:</span> Clients did not know how to book; low trust in the online channel.</li>
+            <li><span class="portfolio-case-type">Solution:</span> Services structure + appointment form + baseline local SEO.</li>
+            <li><span class="portfolio-case-type">Outcome:</span> Professional message and a clear intake path.</li>
+          </ul>
+          <a href="/en/contact" class="portfolio-link">Details on request →</a>
+        </article>
+        <article class="portfolio-item">
+          <h3>E-commerce redesign</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Challenge:</span> High cart abandonment; weak mobile; unclear product story.</li>
+            <li><span class="portfolio-case-type">Solution:</span> Checkout flow redesign, visual hierarchy, and conversion-led product pages.</li>
+            <li><span class="portfolio-case-type">Outcome:</span> Estimated +40% sales after launch vs. same period year before.</li>
+          </ul>
+          <a href="/en/contact" class="portfolio-link">Details on request →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,85 @@
+---
+// SEOHead.astro — Unified SEO metadata component (mobile-first)
+export interface Props {
+  lang: 'ro' | 'en';
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  hreflangRo: string;
+  hreflangEn: string;
+  noindex?: boolean;
+  schemaJson?: string;
+}
+
+const {
+  lang,
+  title,
+  description,
+  canonical,
+  ogImage = 'https://zypherolab.com/img/brand/og-image.png',
+  ogImageAlt = 'ZypheroLab — premium websites for businesses worldwide',
+  hreflangRo,
+  hreflangEn,
+  noindex = false,
+  schemaJson,
+} = Astro.props;
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}>
+<meta name="theme-color" content="#2563eb">
+<meta name="author" content="ZypheroLab">
+<meta name="google-site-verification" content="-THxZHHRE3mQGlULUgCp1KORz4AVxFaa0b4eiRkuZHc">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={ogImage}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content={ogImageAlt}>
+<meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ro_RO'}>
+<meta property="og:locale:alternate" content={lang === 'en' ? 'ro_RO' : 'en_US'}>
+<meta property="og:site_name" content="ZypheroLab">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={ogImage}>
+<meta name="twitter:image:alt" content={ogImageAlt}>
+
+<!-- Canonical + hreflang -->
+<link rel="canonical" href={canonical}>
+<link rel="alternate" hreflang="ro" href={hreflangRo}>
+<link rel="alternate" hreflang="en" href={hreflangEn}>
+<link rel="alternate" hreflang="x-default" href={hreflangEn}>
+
+<!-- Performance -->
+<link rel="preconnect" href="https://formspree.io">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/css/fonts.css?v=20260510a" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/fonts.css?v=20260510a"></noscript>
+<link rel="stylesheet" href="/css/home-critical.css?v=20260510a">
+<link rel="preload" href="/css/style.css?v=20260510a" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/style.css?v=20260510a"></noscript>
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- LLMs -->
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs summary">
+
+<!-- Schema JSON-LD -->
+{schemaJson && <script type="application/ld+json" set:html={schemaJson} />}

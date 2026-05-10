@@ -1,0 +1,93 @@
+---
+// Header.astro — Mobile-first header with full hamburger menu
+export interface Props {
+  lang: 'ro' | 'en';
+  activePage?: string;
+}
+
+const { lang, activePage = '' } = Astro.props;
+
+const navRO = [
+  { href: '/servicii-web', label: 'Servicii', key: 'servicii' },
+  { href: '/preturi-web', label: 'Prețuri', key: 'preturi' },
+  { href: '/studii-de-caz', label: 'Studii de caz', key: 'studii' },
+  { href: '/contact', label: 'Contact', key: 'contact' },
+];
+
+const navEN = [
+  { href: '/en/web-services', label: 'Services', key: 'services' },
+  { href: '/en/web-pricing', label: 'Pricing', key: 'pricing' },
+  { href: '/en/case-studies', label: 'Case studies', key: 'case-studies' },
+  { href: '/en/contact', label: 'Contact', key: 'contact' },
+];
+
+const nav = lang === 'en' ? navEN : navRO;
+const homeHref = lang === 'en' ? '/en/' : '/';
+const homeLabel = lang === 'en' ? 'ZypheroLab — Home' : 'ZypheroLab — Acasă';
+const ctaHref = lang === 'en' ? '/ro/' : '/en/';
+const ctaLabel = lang === 'en' ? 'RO' : 'EN';
+const menuOpen = lang === 'en' ? 'Open menu' : 'Deschide meniul';
+const menuClose = lang === 'en' ? 'Close menu' : 'Închide meniul';
+const darkModeLabel = lang === 'en' ? 'Toggle dark mode' : 'Comută dark mode';
+---
+
+<header>
+  <div class="header-inner">
+    <a href={homeHref} class="brand" aria-label={homeLabel}>
+      <span class="brand-mark-hex" aria-hidden="true">
+        <picture class="brand-mark-img">
+          <source srcset="/img/brand/zypherolab-logo.webp" type="image/webp">
+          <img src="/img/brand/zypherolab-logo.png" alt="ZypheroLab logo" width="44" height="44" decoding="async" loading="eager">
+        </picture>
+      </span>
+      <span class="brand-wordmark">Zyphero<span class="brand-wordmark-accent">Lab</span></span>
+    </a>
+
+    <button type="button" class="hamburger" aria-label={menuOpen} aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="nav-main" aria-label={lang === 'en' ? 'Main navigation' : 'Navigare principală'}>
+      {nav.map(item => (
+        <a href={item.href} class={activePage === item.key ? 'is-active' : ''}>{item.label}</a>
+      ))}
+    </nav>
+
+    <button type="button" class="dark-mode-toggle header-dark-toggle" aria-label={darkModeLabel}>
+      <span class="dark-mode-toggle-icon" aria-hidden="true">🌙</span>
+    </button>
+
+    <a class="header-cta" href={ctaHref}>{ctaLabel}</a>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay" aria-hidden="true"></div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-header">
+    <a href={homeHref} class="brand" aria-label={homeLabel}>
+      <span class="brand-mark-hex" aria-hidden="true">
+        <picture class="brand-mark-img">
+          <source srcset="/img/brand/zypherolab-logo.webp" type="image/webp">
+          <img src="/img/brand/zypherolab-logo.png" alt="ZypheroLab logo" width="44" height="44" decoding="async" loading="lazy">
+        </picture>
+      </span>
+      <span class="brand-wordmark">Zyphero<span class="brand-wordmark-accent">Lab</span></span>
+    </a>
+    <button type="button" class="mobile-menu-close" aria-label={menuClose}>
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <nav class="mobile-menu-nav" aria-label={lang === 'en' ? 'Main navigation' : 'Navigare principală'}>
+    <a href={homeHref}>{lang === 'en' ? 'Home' : 'Acasă'}</a>
+    {nav.map(item => (
+      <a href={item.href} class={activePage === item.key ? 'is-active' : ''}>{item.label}</a>
+    ))}
+  </nav>
+  <div class="mobile-menu-footer">
+    <button type="button" class="dark-mode-toggle" aria-label={darkModeLabel}>
+      <span class="dark-mode-toggle-icon" aria-hidden="true">🌙</span>
+    </button>
+  </div>
+</div>

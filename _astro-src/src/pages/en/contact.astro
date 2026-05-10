@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://zypherolab.com/en/contact#webpage",
+      "url": "https://zypherolab.com/en/contact",
+      "name": "Contact | ZypheroLab",
+      "description": "Contact ZypheroLab for a website quote, redesign, or technical SEO audit. Reply within 24 business hours.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zypherolab.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://zypherolab.com/en/contact" }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="en"
+  title="Contact | ZypheroLab"
+  description="Contact ZypheroLab for a website quote, redesign, or technical SEO audit. Reply within 24 business hours. Available worldwide, remote-first."
+  canonical="https://zypherolab.com/en/contact"
+  hreflangRo="https://zypherolab.com/contact"
+  hreflangEn="https://zypherolab.com/en/contact"
+  ogImageAlt="ZypheroLab — contact for a website quote"
+  activePage="contact"
+  schemaJson={schema}
+>
+  <section class="contact" aria-labelledby="contact-title">
+    <div class="section-inner">
+      <h1 id="contact-title">Get a quote</h1>
+      <p class="offer-lead">Share your main objective and we reply with scope, direction, and estimate within 24 business hours.</p>
+      <div class="cards cards--2">
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">✉️</span>
+          <h2>Email</h2>
+          <p><a href="mailto:hello@zypherolab.com">hello@zypherolab.com</a></p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">💬</span>
+          <h2>WhatsApp</h2>
+          <p><a href="https://wa.me/40747821384?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20for%20a%20website.">+40 747 821 384</a></p>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a class="btn" href="/en/web-pricing">View pricing</a>
+        <a class="btn btn-secondary" href="/en/case-studies">View case studies</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq reveal" aria-labelledby="faq-title">
+    <div class="section-inner">
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <div class="cards cards--3">
+        <article class="card">
+          <h3>How quickly do you reply?</h3>
+          <p>We reply within 24 business hours with next steps and an implementation direction.</p>
+        </article>
+        <article class="card">
+          <h3>What details should we send?</h3>
+          <p>Please share your main objective, business type, approximate budget, and expected timeline.</p>
+        </article>
+        <article class="card">
+          <h3>Can we request a SEO audit only?</h3>
+          <p>Yes, we can run a standalone technical SEO audit and provide actionable recommendations for your current site.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
