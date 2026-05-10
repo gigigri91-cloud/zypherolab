@@ -737,7 +737,7 @@
   function pathImpliesEn() {
     try {
       const p = normalizePathname(window.location.pathname);
-      return p === "/en";
+      return p === "/en" || p.startsWith("/en/");
     } catch {
       return false;
     }
