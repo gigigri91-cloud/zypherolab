@@ -84,17 +84,30 @@
       "@id": "https://zypherolab.com/#organization",
       "name": "ZypheroLab",
       "url": "https://zypherolab.com/",
-      "description": "ZypheroLab construiește website-uri premium, rapide și orientate pe conversie pentru business-uri din România și clienți internaționali. SEO tehnic, UX clar și lead-uri reale.",
-      "logo": "https://zypherolab.com/img/brand/zypherolab-logo.webp",
+      "foundingDate": "2024",
+      "description": "ZypheroLab builds premium, conversion-focused websites for international and Romanian SMBs. Fast delivery, technical SEO, and measurable lead growth.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zypherolab.com/img/brand/zypherolab-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://zypherolab.com/img/brand/og-image.png",
+      "email": "hello@zypherolab.com",
+      "telephone": "+40747821384",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RO"
+      },
+      "priceRange": "€€",
+      "knowsAbout": ["Web Design", "Technical SEO", "Conversion Optimization", "HTML", "CSS", "JavaScript", "GitHub Pages", "Cloudflare"],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
         "telephone": "+40747821384",
-        "url": "https://zypherolab.com/#contact",
-        "availableLanguage": [
-          "ro",
-          "en"
-        ]
+        "email": "hello@zypherolab.com",
+        "url": "https://zypherolab.com/en/contact.html",
+        "availableLanguage": ["English", "Romanian"]
       }
     },
     {
@@ -102,17 +115,15 @@
       "@id": "https://zypherolab.com/#website",
       "url": "https://zypherolab.com/",
       "name": "ZypheroLab",
-      "publisher": {
-        "@id": "https://zypherolab.com/#organization"
-      },
-      "inLanguage": "ro-RO"
+      "publisher": { "@id": "https://zypherolab.com/#organization" },
+      "inLanguage": ["ro-RO", "en-US"]
     },
     {
       "@type": "WebPage",
       "@id": "https://zypherolab.com/#webpage",
       "url": "https://zypherolab.com/",
       "name": "ZypheroLab | Website-uri premium care aduc clienți",
-      "description": "ZypheroLab construiește website-uri premium, rapide și orientate pe conversie pentru business-uri din România și clienți internaționali. SEO tehnic, UX clar și lead-uri reale.",
+      "description": "ZypheroLab construieşte website-uri premium, rapide şi orientate pe conversie pentru business-uri din România şi clienți internaționali. SEO tehnic, UX clar şi lead-uri reale.",
       "isPartOf": { "@id": "https://zypherolab.com/#website" },
       "about": { "@id": "https://zypherolab.com/#organization" },
       "inLanguage": "ro-RO",
@@ -124,19 +135,38 @@
     {
       "@type": "ProfessionalService",
       "@id": "https://zypherolab.com/#service",
-      "name": "ZypheroLab Website Growth Service",
-      "provider": {
-        "@id": "https://zypherolab.com/#organization"
-      },
-      "serviceType": [
-        "Design web",
-        "SEO tehnic",
-        "Optimizare conversie"
-      ],
-      "areaServed": [
-        "RO",
-        "Worldwide"
-      ]
+      "name": "ZypheroLab",
+      "url": "https://zypherolab.com/en/",
+      "telephone": "+40747821384",
+      "email": "hello@zypherolab.com",
+      "provider": { "@id": "https://zypherolab.com/#organization" },
+      "serviceType": ["Web Design", "Technical SEO", "Conversion Optimization"],
+      "areaServed": ["Worldwide"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "ZypheroLab Web Packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Starter",
+            "description": "Complete commercial landing page with baseline technical SEO. Delivered in 3-5 business days.",
+            "price": "300",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Growth",
+            "description": "Multi-page website with advanced technical SEO, KPI reporting, and priority support.",
+            "price": "600",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Custom",
+            "description": "Custom architecture, API integrations, and flexible timeline. Price on request."
+          }
+        ]
+      }
     },
     {
       "@type": "FAQPage",
@@ -147,7 +177,7 @@
           "name": "Cât costă un website?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Landing page de la 300€, site complet 5 pagini de la 600€. Prețul final depinde de funcționalități și complexitate."
+            "text": "Landing page de la 300€, site complet 5 pagini de la 600€. Prețul final depinde de funcționalități şi complexitate."
           }
         },
         {
@@ -155,7 +185,7 @@
           "name": "Ce include pachetul de bază?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Structură strategică, design responsive, formular lead, setup SEO de bază și analytics."
+            "text": "Structură strategică, design responsive mobile-first, formular lead, setup SEO tehnic de bază şi livrare în 3-5 zile lucrătoare."
           }
         },
         {
@@ -163,7 +193,7 @@
           "name": "Cum mă ajută site-ul să obțin mai mulți clienți?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Prin mesaj clar, arhitectură orientată pe conversie și CTA-uri care reduc fricțiunea."
+            "text": "Prin mesaj clar, arhitectură orientată pe conversie şi CTA-uri care reduc fricțiunea. Urmărim traficul şi lead-urile via Google Search Console."
           }
         },
         {
@@ -171,15 +201,15 @@
           "name": "Pot modifica conținutul după?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da, livrăm codul sursă curat și documentat. Poți modifica textele sau pot face eu modificări la cerere."
+            "text": "Da, livrăm codul sursă curat şi documentat. Poți modifica textele sau pot face eu modificări la cerere."
           }
         },
         {
           "@type": "Question",
-          "name": "Lucrați și cu business-uri în engleză?",
+          "name": "Lucrați şi cu business-uri internaționale?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Da. Site-ul are variantă RO/EN și putem adapta conținutul pentru audiențe internaționale."
+            "text": "Da. Lucrăm remote cu clienți din orice țară. Comunicăm în engleză sau română. Site-ul are versiune completă în engleză la zypherolab.com/en/."
           }
         }
       ]

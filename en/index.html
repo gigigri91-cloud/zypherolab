@@ -84,31 +84,47 @@
       "@id": "https://zypherolab.com/#organization",
       "name": "ZypheroLab",
       "url": "https://zypherolab.com/",
-      "description": "ZypheroLab builds premium, high-performance websites for small and medium businesses in Romania and internationally. Conversion-focused UX, technical SEO, and measurable lead growth.",
-      "logo": "https://zypherolab.com/img/brand/zypherolab-logo.webp",
+      "foundingDate": "2024",
+      "description": "ZypheroLab builds premium, conversion-focused websites for international and Romanian SMBs. Fast delivery, technical SEO, and measurable lead growth.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zypherolab.com/img/brand/zypherolab-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://zypherolab.com/img/brand/og-image.png",
+      "email": "hello@zypherolab.com",
+      "telephone": "+40747821384",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RO"
+      },
+      "priceRange": "€€",
+      "knowsAbout": ["Web Design", "Technical SEO", "Conversion Optimization", "HTML", "CSS", "JavaScript", "GitHub Pages", "Cloudflare"],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
         "telephone": "+40747821384",
-        "url": "https://zypherolab.com/en/#contact",
-        "availableLanguage": ["ro", "en"]
+        "email": "hello@zypherolab.com",
+        "url": "https://zypherolab.com/en/contact.html",
+        "availableLanguage": ["English", "Romanian"]
       }
     },
     {
       "@type": "WebSite",
-      "@id": "https://zypherolab.com/en/#website",
-      "url": "https://zypherolab.com/en/",
+      "@id": "https://zypherolab.com/#website",
+      "url": "https://zypherolab.com/",
       "name": "ZypheroLab",
       "publisher": { "@id": "https://zypherolab.com/#organization" },
-      "inLanguage": "en-US"
+      "inLanguage": ["ro-RO", "en-US"]
     },
     {
       "@type": "WebPage",
       "@id": "https://zypherolab.com/en/#webpage",
       "url": "https://zypherolab.com/en/",
       "name": "ZypheroLab | Premium websites that win clients",
-      "description": "ZypheroLab builds premium, high-performance websites for small and medium businesses in Romania and internationally. Conversion-focused UX, technical SEO, and measurable lead growth.",
-      "isPartOf": { "@id": "https://zypherolab.com/en/#website" },
+      "description": "ZypheroLab builds premium, conversion-focused websites for international businesses. Technical SEO, clear UX, and measurable lead growth.",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" },
       "about": { "@id": "https://zypherolab.com/#organization" },
       "inLanguage": "en-US",
       "primaryImageOfPage": {
@@ -118,11 +134,39 @@
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://zypherolab.com/en/#service",
-      "name": "ZypheroLab Website Growth Service",
+      "@id": "https://zypherolab.com/#service",
+      "name": "ZypheroLab",
+      "url": "https://zypherolab.com/en/",
+      "telephone": "+40747821384",
+      "email": "hello@zypherolab.com",
       "provider": { "@id": "https://zypherolab.com/#organization" },
-      "serviceType": ["Web design", "Technical SEO", "Conversion optimization"],
-      "areaServed": ["RO", "Worldwide"]
+      "serviceType": ["Web Design", "Technical SEO", "Conversion Optimization"],
+      "areaServed": ["Worldwide"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "ZypheroLab Web Packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Starter",
+            "description": "Complete commercial landing page with baseline technical SEO. Delivered in 3-5 business days.",
+            "price": "300",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Growth",
+            "description": "Multi-page website with advanced technical SEO, KPI reporting, and priority support.",
+            "price": "600",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Custom",
+            "description": "Custom architecture, API integrations, and flexible timeline. Price on request."
+          }
+        ]
+      }
     },
     {
       "@type": "FAQPage",
@@ -138,10 +182,10 @@
         },
         {
           "@type": "Question",
-          "name": "What is included in the starter package?",
+          "name": "What is included in the Starter package?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strategic page structure, responsive design, lead form, baseline SEO setup, and analytics."
+            "text": "Strategic page structure, responsive mobile-first design, lead form, baseline technical SEO setup, and delivery in 3-5 business days."
           }
         },
         {
@@ -149,7 +193,7 @@
           "name": "How does the website help me get more clients?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Through clear messaging, conversion-focused structure, and CTA flows that reduce friction."
+            "text": "Through clear messaging, conversion-focused structure, and CTA flows that reduce friction. We track traffic and leads via Google Search Console."
           }
         },
         {
@@ -157,15 +201,15 @@
           "name": "Can I edit content later?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, we deliver clean, documented source code. You can edit text or I can make changes on request."
+            "text": "Yes, we deliver clean, documented source code. You can edit text or we can make changes on request."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you work with bilingual audiences?",
+          "name": "Do you work with international clients?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The site supports RO/EN and content can be adapted for international clients."
+            "text": "Yes. We work fully remote with clients worldwide. Communication in English or Romanian. Delivery timeline is the same regardless of location."
           }
         }
       ]
