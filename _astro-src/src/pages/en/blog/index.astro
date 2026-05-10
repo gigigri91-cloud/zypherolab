@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return data.lang === 'en';
+});
+// Sort by date descending
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/en/blog#webpage",
+      "url": "https://zypherolab.com/en/blog",
+      "name": "Blog | ZypheroLab",
+      "description": "Insights on technical SEO, conversion optimization, and web performance from ZypheroLab.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zypherolab.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zypherolab.com/en/blog" }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="en"
+  title="Blog | ZypheroLab"
+  description="Insights on technical SEO, conversion optimization, and web performance from ZypheroLab."
+  canonical="https://zypherolab.com/en/blog"
+  hreflangRo="https://zypherolab.com/blog"
+  hreflangEn="https://zypherolab.com/en/blog"
+  ogImageAlt="ZypheroLab Blog — Web performance insights"
+  activePage="blog"
+  schemaJson={schema}
+>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Insights for Growth</h1>
+        <p class="hero-subtitle">Articles on technical SEO, conversion optimization, and building high-performance websites.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio reveal" aria-labelledby="blog-title">
+    <div class="section-inner">
+      <h2 id="blog-title">Latest Articles</h2>
+      <div class="portfolio-grid">
+        {posts.map(post => (
+          <article class="portfolio-item">
+            <h3><a href={`/en/blog/${post.id.replace('en/', '')}`}>{post.data.title}</a></h3>
+            <p>{post.data.description}</p>
+            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+              {post.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

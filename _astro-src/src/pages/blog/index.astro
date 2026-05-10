@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return data.lang === 'ro';
+});
+// Sort by date descending
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/blog#webpage",
+      "url": "https://zypherolab.com/blog",
+      "name": "Blog | ZypheroLab",
+      "description": "Articole despre SEO tehnic, optimizarea ratei de conversie și dezvoltarea site-urilor rapide.",
+      "inLanguage": "ro-RO",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://zypherolab.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zypherolab.com/blog" }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="ro"
+  title="Blog | ZypheroLab"
+  description="Articole despre SEO tehnic, optimizarea ratei de conversie și dezvoltarea site-urilor web rapide pentru creșterea afacerilor."
+  canonical="https://zypherolab.com/blog"
+  hreflangRo="https://zypherolab.com/blog"
+  hreflangEn="https://zypherolab.com/en/blog"
+  ogImageAlt="Blog ZypheroLab — Articole web performance"
+  activePage="blog"
+  schemaJson={schema}
+>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Articole pentru Creștere</h1>
+        <p class="hero-subtitle">Insight-uri despre SEO tehnic, UX orientat spre conversie și strategii pentru site-uri de înaltă performanță.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio reveal" aria-labelledby="blog-title">
+    <div class="section-inner">
+      <h2 id="blog-title">Cele mai noi articole</h2>
+      <div class="portfolio-grid">
+        {posts.map(post => (
+          <article class="portfolio-item">
+            <h3><a href={`/blog/${post.id.replace('ro/', '')}`}>{post.data.title}</a></h3>
+            <p>{post.data.description}</p>
+            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+              {post.data.pubDate.toLocaleDateString('ro-RO', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
