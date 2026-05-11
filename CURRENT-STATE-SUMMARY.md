@@ -1,5 +1,14 @@
 # ZypheroLab Current State Audit
 
+> **UPDATE 2026-05-11: Astro Migration Complete**
+> The project architecture has been fully migrated from raw HTML to Astro 5 (`_astro-src/`).
+> - **Sitemap & SEO:** Successfully replaced the old `sitemap.xml` with dynamic `@astrojs/sitemap` generating `sitemap-index.xml` and `sitemap-0.xml` (with proper `hreflang` RO/EN support).
+> - **Legal Pages:** Created placeholder pages for RO (`privacy.astro`, `termeni.astro`) and EN (`en/privacy.astro`, `en/terms.astro`), eliminating 404 links in the footer.
+> - **Routing:** Fixed all internal navigation CTAs across components to strictly use trailing slashes (e.g. `/contact/`), avoiding server redirects.
+> - **Deployment:** The root directory now serves the generated static `dist/` output perfectly. The repository has been cleaned, compiled, and pushed to GitHub Pages.
+> 
+> *(Below is the historical audit from before the Astro migration)*
+
 Audit date: 2026-04-16  
 Scope: `index.html`, `en/index.html`, `css/`, `js/`, SEO/config files, and visible legacy files.
 
