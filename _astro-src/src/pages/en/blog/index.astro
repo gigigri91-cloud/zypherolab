@@ -57,7 +57,7 @@ const schema = JSON.stringify({
       <div class="portfolio-grid">
         {posts.map(post => (
           <article class="portfolio-item">
-            <h3><a href={`/en/blog/${post.id.replace('en/', '')}`}>{post.data.title}</a></h3>
+            <h3><a href={`/en/blog/${post.id.replace('en/', '')}/`}>{post.data.title}</a></h3>
             <p>{post.data.description}</p>
             <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
               {post.data.pubDate.toLocaleDateString('en-US', {

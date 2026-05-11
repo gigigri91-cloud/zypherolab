@@ -6,17 +6,17 @@ export interface Props {
 const { lang } = Astro.props;
 
 const linksEN = [
-  { href: '/en/web-services', label: 'Services' },
-  { href: '/en/web-pricing', label: 'Pricing' },
-  { href: '/en/case-studies', label: 'Case Studies' },
-  { href: '/en/contact', label: 'Contact' },
+  { href: '/en/web-services/', label: 'Services' },
+  { href: '/en/web-pricing/', label: 'Pricing' },
+  { href: '/en/case-studies/', label: 'Case Studies' },
+  { href: '/en/contact/', label: 'Contact' },
 ];
 
 const linksRO = [
-  { href: '/servicii-web', label: 'Servicii' },
-  { href: '/preturi-web', label: 'Prețuri' },
-  { href: '/studii-de-caz', label: 'Studii de caz' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/servicii-web/', label: 'Servicii' },
+  { href: '/preturi-web/', label: 'Prețuri' },
+  { href: '/studii-de-caz/', label: 'Studii de caz' },
+  { href: '/contact/', label: 'Contact' },
 ];
 
 const links = lang === 'en' ? linksEN : linksRO;
@@ -28,8 +28,8 @@ const copy = lang === 'en'
   : 'Toate drepturile rezervate. Activitate independentă, România.';
 const privacyLabel = lang === 'en' ? 'Privacy Policy' : 'Politică de confidențialitate';
 const termsLabel = lang === 'en' ? 'Terms of Service' : 'Termeni și condiții';
-const privacyHref = lang === 'en' ? '/en/privacy' : '/privacy';
-const termsHref = lang === 'en' ? '/en/terms' : '/termeni';
+const privacyHref = lang === 'en' ? '/en/privacy/' : '/privacy/';
+const termsHref = lang === 'en' ? '/en/terms/' : '/termeni/';
 ---
 
 <footer class="site-footer">

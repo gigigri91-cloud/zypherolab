@@ -8,23 +8,23 @@ export interface Props {
 const { lang, activePage = '' } = Astro.props;
 
 const navRO = [
-  { href: '/servicii-web', label: 'Servicii', key: 'servicii' },
-  { href: '/preturi-web', label: 'Prețuri', key: 'preturi' },
-  { href: '/studii-de-caz', label: 'Studii de caz', key: 'studii' },
-  { href: '/contact', label: 'Contact', key: 'contact' },
+  { href: '/servicii-web/', label: 'Servicii', key: 'servicii' },
+  { href: '/preturi-web/', label: 'Prețuri', key: 'preturi' },
+  { href: '/studii-de-caz/', label: 'Studii de caz', key: 'studii' },
+  { href: '/contact/', label: 'Contact', key: 'contact' },
 ];
 
 const navEN = [
-  { href: '/en/web-services', label: 'Services', key: 'services' },
-  { href: '/en/web-pricing', label: 'Pricing', key: 'pricing' },
-  { href: '/en/case-studies', label: 'Case studies', key: 'case-studies' },
-  { href: '/en/contact', label: 'Contact', key: 'contact' },
+  { href: '/en/web-services/', label: 'Services', key: 'services' },
+  { href: '/en/web-pricing/', label: 'Pricing', key: 'pricing' },
+  { href: '/en/case-studies/', label: 'Case studies', key: 'case-studies' },
+  { href: '/en/contact/', label: 'Contact', key: 'contact' },
 ];
 
 const nav = lang === 'en' ? navEN : navRO;
 const homeHref = lang === 'en' ? '/en/' : '/';
 const homeLabel = lang === 'en' ? 'ZypheroLab — Home' : 'ZypheroLab — Acasă';
-const ctaHref = lang === 'en' ? '/ro/' : '/en/';
+const ctaHref = lang === 'en' ? '/' : '/en/';
 const ctaLabel = lang === 'en' ? 'RO' : 'EN';
 const menuOpen = lang === 'en' ? 'Open menu' : 'Deschide meniul';
 const menuClose = lang === 'en' ? 'Close menu' : 'Închide meniul';
