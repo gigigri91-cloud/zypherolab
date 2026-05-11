@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/studii-de-caz#webpage",
+      "url": "https://zypherolab.com/studii-de-caz",
+      "name": "Studii de Caz | ZypheroLab",
+      "description": "Studii de caz ZypheroLab: provocare, soluție și rezultat măsurabil pentru proiecte web axate pe conversie.",
+      "inLanguage": "ro-RO",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://zypherolab.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Studii de Caz", "item": "https://zypherolab.com/studii-de-caz" }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="ro"
+  title="Studii de Caz | ZypheroLab"
+  description="Studii de caz ZypheroLab: provocare, soluție și rezultat măsurabil pentru proiecte web axate pe conversie pentru afaceri din România și internaționale."
+  canonical="https://zypherolab.com/studii-de-caz"
+  hreflangRo="https://zypherolab.com/studii-de-caz"
+  hreflangEn="https://zypherolab.com/en/case-studies"
+  ogImageAlt="ZypheroLab — studii de caz web design cu rezultate măsurabile"
+  activePage="studii"
+  schemaJson={schema}
+>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Studii de caz — proiecte reale</h1>
+        <p class="hero-subtitle">Fiecare proiect pornește dintr-o problemă reală și se termină cu un rezultat măsurabil.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/contact">Discută proiectul tău</a>
+          <a class="btn btn-secondary" href="/preturi-web">Vezi prețuri</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio reveal" aria-labelledby="cases-title">
+    <div class="section-inner">
+      <h2 id="cases-title">Proiecte livrate</h2>
+      <div class="portfolio-grid">
+        <article class="portfolio-item">
+          <h3>Landing page restaurant</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Provocare:</span> Site vechi era lent pe mobil; rezervările se pierdeau la telefon.</li>
+            <li><span class="portfolio-case-type">Soluție:</span> Landing cu meniu clar, CTA rezervare și detalii ușor de scanat.</li>
+            <li><span class="portfolio-case-type">Rezultat:</span> Un singur flux de contact; experiență mobile-first stabilă.</li>
+          </ul>
+          <a href="/contact" class="portfolio-link">Detalii la cerere →</a>
+        </article>
+        <article class="portfolio-item">
+          <h3>Site cabinet avocatură</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Provocare:</span> Clienții nu știau cum să programeze; încredere scăzută în canalul online.</li>
+            <li><span class="portfolio-case-type">Soluție:</span> Structura servicii + formular programări + SEO local de bază.</li>
+            <li><span class="portfolio-case-type">Rezultat:</span> Mesaj profesional și o cale clară de intrare.</li>
+          </ul>
+          <a href="/contact" class="portfolio-link">Detalii la cerere →</a>
+        </article>
+        <article class="portfolio-item">
+          <h3>Redesign e-commerce</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Provocare:</span> Abandonare coș ridicată; mobil slab; poveste produs neclară.</li>
+            <li><span class="portfolio-case-type">Soluție:</span> Redesign flux checkout, ierarhie vizuală și pagini produs axate pe conversie.</li>
+            <li><span class="portfolio-case-type">Rezultat:</span> Estimat +40% vânzări după lansare față de aceeași perioadă a anului anterior.</li>
+          </ul>
+          <a href="/contact" class="portfolio-link">Detalii la cerere →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

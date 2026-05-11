@@ -1,0 +1,372 @@
+---
+// src/pages/simulator.astro — Generator de previzualizare site (RO)
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/simulator#webpage",
+      "url": "https://zypherolab.com/simulator",
+      "name": "Simulator Site Web | ZypheroLab",
+      "description": "Generează o previzualizare a site-ului business-ului tău în câteva secunde. Alege tipul de business, culoarea și primești un concept vizual instant.",
+      "inLanguage": "ro-RO",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://zypherolab.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Simulator Site", "item": "https://zypherolab.com/simulator" }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="ro"
+  title="Simulator Site Web | ZypheroLab"
+  description="Generează o previzualizare a site-ului business-ului tău în câteva secunde. Alege tipul de business, culoarea accent și primești un concept vizual instant — gratuit."
+  canonical="https://zypherolab.com/simulator"
+  hreflangRo="https://zypherolab.com/simulator"
+  hreflangEn="https://zypherolab.com/en/simulator"
+  ogImageAlt="ZypheroLab — simulator site web interactiv"
+  activePage="simulator"
+  schemaJson={schema}
+>
+  <!-- i18n + simulator scripts (necesare pentru această pagină) -->
+  <script src="/js/i18n.js?v=20260510a" defer></script>
+  <script src="/js/simulator.js?v=20260510a" defer></script>
+
+  <!-- CSS suplimentar simulator -->
+  <link rel="stylesheet" href="/css/simulator.css?v=20260510a">
+
+  <section class="hero" id="simulator-hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge">Simulator live · Gratuit · Fără cont</div>
+        <h1>Generează previzualizarea site-ului tău</h1>
+        <p class="hero-subtitle">
+          Introdu numele business-ului, alege tipul și culoarea — și primești instant un concept vizual. Etapa dinainte de ofertă: un punct de plecare, nu produsul final.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="simulator-section reveal" id="simulator" aria-labelledby="sim-title">
+    <div class="section-inner simulator-layout">
+
+      <!-- PANOUL STÂNGA: Inputs -->
+      <div class="sim-form-panel">
+        <h2 id="sim-title" data-i18n="gen.title">Generator website</h2>
+        <p class="sim-funnel-note" data-i18n="gen.funnelBridge"></p>
+
+        <div class="sim-form-group">
+          <label for="siteName" data-i18n="gen.labelName">Nume business</label>
+          <input
+            type="text"
+            id="siteName"
+            name="siteName"
+            autocomplete="organization"
+            data-i18n-placeholder="gen.phName"
+            placeholder="Introdu numele"
+            maxlength="60"
+          >
+        </div>
+
+        <div class="sim-form-group">
+          <label for="siteType" data-i18n="gen.labelType">Tip business</label>
+          <select id="siteType" name="siteType" data-i18n-options>
+            <option value="restaurant" data-i18n="gen.opt.restaurant">Restaurant</option>
+            <option value="barber" data-i18n="gen.opt.barber">Frizerie</option>
+            <option value="agency" data-i18n="gen.opt.agency">Agenție</option>
+            <option value="services" data-i18n="gen.opt.services">Servicii</option>
+            <option value="ecommerce" data-i18n="gen.opt.ecommerce">E-commerce</option>
+            <option value="medical" data-i18n="gen.opt.medical">Medical</option>
+            <option value="fitness" data-i18n="gen.opt.fitness">Fitness</option>
+            <option value="legal" data-i18n="gen.opt.legal">Avocatură</option>
+            <option value="education" data-i18n="gen.opt.education">Educație</option>
+            <option value="consulting" data-i18n="gen.opt.consulting">Consultanță</option>
+          </select>
+        </div>
+
+        <div class="sim-form-group">
+          <label for="siteDescription" data-i18n="gen.labelDescription">Descriere business</label>
+          <input
+            type="text"
+            id="siteDescription"
+            name="siteDescription"
+            data-i18n-placeholder="gen.phDescription"
+            placeholder="Spune pe scurt ce oferi și cui te adresezi."
+            maxlength="120"
+          >
+        </div>
+
+        <div class="sim-form-group">
+          <label for="siteServices" data-i18n="gen.labelServices">Servicii principale</label>
+          <input
+            type="text"
+            id="siteServices"
+            name="siteServices"
+            data-i18n-placeholder="gen.phServices"
+            placeholder="Ex: tuns, barbă, styling"
+            maxlength="120"
+          >
+        </div>
+
+        <div class="sim-form-group">
+          <label for="sitePhone" data-i18n="gen.labelPhone">Telefon</label>
+          <input
+            type="tel"
+            id="sitePhone"
+            name="sitePhone"
+            autocomplete="tel"
+            data-i18n-placeholder="gen.phPhone"
+            placeholder="07xx xxx xxx"
+            maxlength="20"
+          >
+        </div>
+
+        <div class="sim-form-group">
+          <label for="siteAddress" data-i18n="gen.labelAddress">Adresă</label>
+          <input
+            type="text"
+            id="siteAddress"
+            name="siteAddress"
+            autocomplete="street-address"
+            data-i18n-placeholder="gen.phAddress"
+            placeholder="Oraș, stradă, nr."
+            maxlength="100"
+          >
+        </div>
+
+        <div class="sim-form-group">
+          <label for="siteColor">
+            <span data-i18n="gen.labelColor">Culoare principală</span>
+            <span id="siteColorValue" class="color-value-badge">220°</span>
+          </label>
+          <input
+            type="range"
+            id="siteColor"
+            name="siteColor"
+            min="0"
+            max="360"
+            value="220"
+            aria-describedby="colorHint"
+          >
+          <p id="colorHint" class="sim-hint" data-i18n="gen.colorHint">Alege nuanța culorii accent pentru preview, de la 0 la 360 grade.</p>
+        </div>
+
+        <div class="sim-form-group">
+          <span class="sim-label" data-i18n="gen.labelStyle">Stil</span>
+          <div class="style-options" role="group" aria-label="Alege stilul">
+            <button type="button" data-style="modern" class="active">Modern</button>
+            <button type="button" data-style="minimal">Minimal</button>
+            <button type="button" data-style="bold">Bold</button>
+          </div>
+        </div>
+
+        <button type="button" id="generatePreviewBtn" class="btn sim-generate-btn">
+          <span data-i18n="gen.btnGenerate">Generează preview site</span>
+        </button>
+
+        <p id="formStatus" class="form-status" role="alert" aria-live="polite"></p>
+      </div>
+
+      <!-- PANOUL DREAPTA: Preview -->
+      <div class="sim-preview-panel">
+        <div class="sim-preview-header">
+          <div class="preview-toggles" role="group" aria-label="Mod previzualizare">
+            <button type="button" class="preview-toggle preview-toggle--active" data-preview="desktop" aria-pressed="true">
+              🖥 Desktop
+            </button>
+            <button type="button" class="preview-toggle" data-preview="mobile" aria-pressed="false">
+              📱 Mobil
+            </button>
+          </div>
+          <button type="button" id="exportPreviewBtn" class="btn btn-secondary sim-export-btn">
+            <span data-i18n="gen.btnExport">Exportă HTML</span>
+          </button>
+        </div>
+
+        <div class="preview-devices" aria-label="Previzualizare concept site" data-i18n-aria="gen.previewRegion">
+          <div class="preview-laptop preview-device--active">
+            <div id="previewBox" class="preview-root">
+              <p class="preview-placeholder" data-i18n="gen.phPreview">
+                Apasă „Generează preview site" pentru a vedea conceptul.
+              </p>
+            </div>
+          </div>
+          <div class="preview-mobile">
+            <div id="previewBoxMobile" class="preview-root preview-root--mobile"></div>
+          </div>
+        </div>
+
+        <div class="sim-footer-cta">
+          <p data-i18n="gen.footText">După preview, completează cererea — folosim ce ai introdus ca referință pentru estimare și următorul pas.</p>
+          <a class="btn" href="/contact" data-i18n="gen.footCta">Continuă la cerere de ofertă</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  /* Layout simulator */
+  .simulator-section { padding: var(--section-py, 4rem) 0; }
+  .simulator-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .simulator-layout { grid-template-columns: 380px 1fr; gap: 3rem; }
+  }
+
+  /* Form panel */
+  .sim-form-panel {
+    background: var(--card-bg, rgba(255,255,255,0.04));
+    border: 1px solid var(--border, rgba(255,255,255,0.1));
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .sim-funnel-note {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #94a3b8);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .sim-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .sim-form-group label,
+  .sim-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .sim-form-group input,
+  .sim-form-group select {
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border, rgba(255,255,255,0.15));
+    background: var(--input-bg, rgba(0,0,0,0.2));
+    color: var(--text, #e2e8f0);
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .sim-form-group input:focus,
+  .sim-form-group select:focus { border-color: var(--accent, #2563eb); }
+  .sim-form-group input[type="range"] { padding: 0.3rem 0; cursor: pointer; }
+  .color-value-badge {
+    background: var(--accent, #2563eb);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.1em 0.5em;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .sim-hint { font-size: 0.78rem; color: var(--text-secondary, #94a3b8); margin: 0; }
+
+  /* Style pills */
+  .style-options { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
+  .style-options button {
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border, rgba(255,255,255,0.15));
+    background: transparent;
+    color: var(--text-secondary, #94a3b8);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .style-options button.active,
+  .style-options button:hover {
+    background: var(--accent, #2563eb);
+    border-color: var(--accent, #2563eb);
+    color: #fff;
+  }
+
+  .sim-generate-btn { width: 100%; justify-content: center; margin-top: 0.5rem; }
+  .form-status { font-size: 0.85rem; color: var(--accent, #2563eb); min-height: 1.2em; margin: 0; }
+
+  /* Preview panel */
+  .sim-preview-panel { display: flex; flex-direction: column; gap: 1.25rem; }
+  .sim-preview-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .preview-toggles { display: flex; gap: 0.5rem; }
+  .preview-toggle {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border, rgba(255,255,255,0.15));
+    background: transparent;
+    color: var(--text-secondary, #94a3b8);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .preview-toggle--active,
+  .preview-toggle:hover {
+    background: var(--accent, #2563eb);
+    border-color: var(--accent, #2563eb);
+    color: #fff;
+  }
+  .sim-export-btn { font-size: 0.85rem; padding: 0.4rem 1rem; }
+
+  .preview-devices { position: relative; min-height: 420px; }
+  .preview-laptop,
+  .preview-mobile {
+    display: none;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--border, rgba(255,255,255,0.1));
+    background: var(--card-bg, rgba(255,255,255,0.03));
+  }
+  .preview-device--active { display: block; }
+  .preview-mobile { max-width: 360px; margin: 0 auto; }
+
+  .preview-root {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+  }
+  .preview-root--mobile { min-height: 600px; }
+  .preview-placeholder {
+    color: var(--text-secondary, #94a3b8);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .sim-footer-cta {
+    background: var(--card-bg, rgba(255,255,255,0.04));
+    border: 1px solid var(--border, rgba(255,255,255,0.1));
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .sim-footer-cta p { margin: 0; font-size: 0.95rem; color: var(--text-secondary, #94a3b8); }
+</style>

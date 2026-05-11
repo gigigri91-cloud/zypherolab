@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/preturi-web#webpage",
+      "url": "https://zypherolab.com/preturi-web",
+      "name": "Prețuri Web | ZypheroLab",
+      "description": "Prețuri transparente ZypheroLab: Starter de la €300, Growth de la €600 și pachete Custom pentru site-uri axate pe conversie.",
+      "inLanguage": "ro-RO",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://zypherolab.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Prețuri Web", "item": "https://zypherolab.com/preturi-web" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Care este bugetul minim de lansare?", "acceptedAnswer": { "@type": "Answer", "text": "Pachetul Starter începe de la €300 pentru un landing page comercial complet, gata de promovare." } },
+        { "@type": "Question", "name": "Când alegem pachetul Growth?", "acceptedAnswer": { "@type": "Answer", "text": "Growth se potrivește când ai nevoie de un site multi-pagină, SEO tehnic avansat și raportare KPI lunară." } },
+        { "@type": "Question", "name": "Există taxe recurente obligatorii?", "acceptedAnswer": { "@type": "Answer", "text": "Nu există taxe recurente obligatorii ascunse. Abonamentele de mentenanță și optimizare sunt opționale." } }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="ro"
+  title="Prețuri Web | ZypheroLab"
+  description="Prețuri transparente ZypheroLab: Starter de la €300, Growth de la €600 și pachete Custom pentru site-uri axate pe conversie în România."
+  canonical="https://zypherolab.com/preturi-web"
+  hreflangRo="https://zypherolab.com/preturi-web"
+  hreflangEn="https://zypherolab.com/en/web-pricing"
+  ogImageAlt="ZypheroLab — prețuri transparente web de la €300"
+  activePage="preturi"
+  schemaJson={schema}
+>
+  <section class="pricing" aria-labelledby="pricing-title">
+    <div class="section-inner">
+      <h1 id="pricing-title">Prețuri transparente pentru creștere</h1>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <h2>Starter</h2>
+          <div class="pricing-price">€300</div>
+          <ul class="pricing-features">
+            <li>Landing page complet</li>
+            <li>SEO tehnic de bază</li>
+            <li>Formular + WhatsApp</li>
+            <li>Live în 3-5 zile</li>
+            <li>Suport email 30 zile</li>
+          </ul>
+          <a class="btn" href="/contact">Alege Starter</a>
+        </article>
+        <article class="pricing-card pricing-card--featured">
+          <div class="pricing-badge">Cel mai popular</div>
+          <h2>Growth</h2>
+          <div class="pricing-price">€600</div>
+          <ul class="pricing-features">
+            <li>Site multi-pagină</li>
+            <li>SEO tehnic avansat</li>
+            <li>Rapoarte GSC lunare</li>
+            <li>Live în 5-7 zile</li>
+            <li>Suport prioritar 3 luni</li>
+          </ul>
+          <a class="btn" href="/contact">Alege Growth</a>
+        </article>
+        <article class="pricing-card">
+          <h2>Custom</h2>
+          <div class="pricing-price">La cerere</div>
+          <ul class="pricing-features">
+            <li>E-commerce sau aplicație</li>
+            <li>Integrări API</li>
+            <li>Scope & timeline flexibil</li>
+            <li>Suport dedicat</li>
+          </ul>
+          <a class="btn" href="/contact">Cere ofertă</a>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a class="btn btn-secondary" href="/studii-de-caz">Vezi studii de caz →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq reveal" aria-labelledby="faq-title">
+    <div class="section-inner">
+      <h2 id="faq-title">Întrebări frecvente despre prețuri</h2>
+      <div class="cards cards--3">
+        <article class="card">
+          <h3>Care este bugetul minim de lansare?</h3>
+          <p>Pachetul Starter începe de la €300 pentru un landing page comercial complet, gata de promovare.</p>
+        </article>
+        <article class="card">
+          <h3>Când alegem pachetul Growth?</h3>
+          <p>Growth se potrivește când ai nevoie de un site multi-pagină, SEO tehnic avansat și raportare KPI lunară.</p>
+        </article>
+        <article class="card">
+          <h3>Există taxe recurente obligatorii?</h3>
+          <p>Nu există taxe recurente obligatorii ascunse. Abonamentele de mentenanță și optimizare sunt opționale.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

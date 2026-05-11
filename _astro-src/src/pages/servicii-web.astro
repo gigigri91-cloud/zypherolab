@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/servicii-web#webpage",
+      "url": "https://zypherolab.com/servicii-web",
+      "name": "Servicii Web | ZypheroLab",
+      "description": "Servicii web ZypheroLab: site-uri axate pe conversie, SEO tehnic și iterație pentru creștere pentru afaceri din România.",
+      "inLanguage": "ro-RO",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" },
+      "about": { "@id": "https://zypherolab.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://zypherolab.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Servicii Web", "item": "https://zypherolab.com/servicii-web" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Ce include pachetul de bază?", "acceptedAnswer": { "@type": "Answer", "text": "Pachetul de bază include structura comercială a paginii, copywriting orientat spre conversie, implementare mobile-first și configurare SEO tehnic." } },
+        { "@type": "Question", "name": "Cât de repede pot vedea prima versiune funcțională?", "acceptedAnswer": { "@type": "Answer", "text": "Pentru un scope standard, prima versiune funcțională este livrată în 3-5 zile lucrătoare." } },
+        { "@type": "Question", "name": "Lucrați și cu clienți internaționali?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Lucrăm 100% remote cu clienți din toată lumea. Comunicare în română sau engleză." } }
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  lang="ro"
+  title="Servicii Web | ZypheroLab"
+  description="Servicii web ZypheroLab: site-uri axate pe conversie, SEO tehnic avansat și suport pentru creștere pentru afaceri din România. Livrate în 3-5 zile."
+  canonical="https://zypherolab.com/servicii-web"
+  hreflangRo="https://zypherolab.com/servicii-web"
+  hreflangEn="https://zypherolab.com/en/web-services"
+  ogImageAlt="ZypheroLab — servicii web premium pentru afaceri din România"
+  activePage="servicii"
+  schemaJson={schema}
+>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Servicii web construite pentru creștere</h1>
+        <p class="hero-subtitle">Arhitectură comercială clară, performanță optimă și rezultate de conversie măsurabile. Disponibil remote, în toată lumea.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/preturi-web">Vezi prețuri</a>
+          <a class="btn btn-secondary" href="/contact">Cere ofertă</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services reveal" aria-labelledby="service-scope">
+    <div class="section-inner">
+      <h2 id="service-scope">Scope servicii</h2>
+      <div class="cards cards--3">
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🎯</span>
+          <h3>Site axat pe conversie</h3>
+          <p>Structură comercială, ierarhie CTA, UX mobile-first — construit să genereze lead-uri, nu doar să arate bine.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🔍</span>
+          <h3>SEO tehnic</h3>
+          <p>Canonical, hreflang, schema, Core Web Vitals și configurare indexare pentru paginile importante.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">📈</span>
+          <h3>Iterație pentru creștere</h3>
+          <p>Sprinturi lunare de optimizare pe baza datelor GSC. Fără analytics bloat, doar semnale relevante.</p>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a class="btn btn-secondary" href="/studii-de-caz">Vezi studii de caz →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq reveal" aria-labelledby="faq-title">
+    <div class="section-inner">
+      <h2 id="faq-title">Întrebări frecvente despre servicii</h2>
+      <div class="cards cards--3">
+        <article class="card">
+          <h3>Ce include pachetul de bază?</h3>
+          <p>Structura comercială a paginii, copywriting orientat spre conversie, implementare mobile-first și configurare SEO tehnic.</p>
+        </article>
+        <article class="card">
+          <h3>Cât de repede văd prima versiune?</h3>
+          <p>Pentru un scope standard, prima versiune funcțională este livrată în 3-5 zile lucrătoare.</p>
+        </article>
+        <article class="card">
+          <h3>Lucrați cu clienți internaționali?</h3>
+          <p>Da. Lucrăm remote cu clienți din toată lumea. Comunicare în română sau engleză.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

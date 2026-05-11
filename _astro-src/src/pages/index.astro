@@ -1,17 +1,288 @@
 ---
+// src/pages/index.astro
+// Pagina principală RO — ZypheroLab
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://zypherolab.com/#organization",
+      "name": "ZypheroLab",
+      "url": "https://zypherolab.com/",
+      "foundingDate": "2024",
+      "description": "ZypheroLab construiește site-uri premium, axate pe conversie, pentru IMM-uri din România și internaționale. Livrare rapidă, SEO tehnic și creștere măsurabilă a clienților.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zypherolab.com/img/brand/zypherolab-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://zypherolab.com/img/brand/og-image.png",
+      "email": "hello@zypherolab.com",
+      "telephone": "+40747821384",
+      "address": { "@type": "PostalAddress", "addressCountry": "RO" },
+      "priceRange": "€€",
+      "knowsAbout": ["Web Design","SEO Tehnic","Optimizare Conversie","HTML","CSS","JavaScript","GitHub Pages","Cloudflare"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+40747821384",
+        "email": "hello@zypherolab.com",
+        "url": "https://zypherolab.com/contact",
+        "availableLanguage": ["Romanian","English"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://zypherolab.com/#website",
+      "url": "https://zypherolab.com/",
+      "name": "ZypheroLab",
+      "publisher": { "@id": "https://zypherolab.com/#organization" },
+      "inLanguage": ["ro-RO","en-US"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://zypherolab.com/#webpage",
+      "url": "https://zypherolab.com/",
+      "name": "ZypheroLab | Site-uri premium care aduc clienți",
+      "description": "ZypheroLab construiește site-uri premium, axate pe conversie, pentru afaceri din România. SEO tehnic, UX clar și creștere măsurabilă a lead-urilor.",
+      "isPartOf": { "@id": "https://zypherolab.com/#website" },
+      "about": { "@id": "https://zypherolab.com/#organization" },
+      "inLanguage": "ro-RO"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://zypherolab.com/#service",
+      "name": "ZypheroLab",
+      "url": "https://zypherolab.com/",
+      "telephone": "+40747821384",
+      "email": "hello@zypherolab.com",
+      "provider": { "@id": "https://zypherolab.com/#organization" },
+      "serviceType": ["Web Design","SEO Tehnic","Optimizare Conversie"],
+      "areaServed": ["România","Worldwide"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pachete ZypheroLab",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Starter", "description": "Landing page comercial complet cu SEO tehnic de bază. Livrat în 3-5 zile lucrătoare.", "price": "300", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Growth", "description": "Site multi-pagină cu SEO tehnic avansat, raportare KPI și suport prioritar.", "price": "600", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Custom", "description": "Arhitectură personalizată, integrări API și timeline flexibil. Preț la cerere." }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://zypherolab.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Cât costă un site web?", "acceptedAnswer": { "@type": "Answer", "text": "Landing page de la €300, site multi-pagină de la €600. Prețul final depinde de complexitate și scopul proiectului." } },
+        { "@type": "Question", "name": "Cât durează livrarea?", "acceptedAnswer": { "@type": "Answer", "text": "Pentru un scope standard, prima versiune funcțională este livrată în 3-5 zile lucrătoare." } },
+        { "@type": "Question", "name": "Cum mă ajută site-ul să obțin mai mulți clienți?", "acceptedAnswer": { "@type": "Answer", "text": "Prin mesaje clare, arhitectură axată pe conversie și fluxuri CTA care reduc fricțiunea. Urmărim rezultatele prin Google Search Console." } },
+        { "@type": "Question", "name": "Pot edita conținutul ulterior?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Livrăm cod sursă curat, documentat. Poți edita singur sau ne poți solicita modificări oricând." } }
+      ]
+    }
+  ]
+});
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  lang="ro"
+  title="ZypheroLab | Site-uri premium care aduc clienți"
+  description="ZypheroLab construiește site-uri premium, axate pe conversie, pentru afaceri din România. SEO tehnic, livrare rapidă, creștere măsurabilă a lead-urilor. De la €300."
+  canonical="https://zypherolab.com/"
+  hreflangRo="https://zypherolab.com/"
+  hreflangEn="https://zypherolab.com/en/"
+  ogImageAlt="ZypheroLab — site-uri premium care aduc clienți"
+  schemaJson={schema}
+>
+  <!-- HERO -->
+  <section class="hero hero--home" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge">Remote · România · De la €300</div>
+        <h1 id="hero-title">Site-uri care<br>aduc clienți.</h1>
+        <p class="hero-subtitle">
+          Web design premium și SEO tehnic pentru afacerile care vor creștere măsurabilă — nu doar o pagină frumoasă.
+        </p>
+        <div class="hero-proof">
+          <span>⚡ Live în 3-5 zile</span>
+          <span>🔒 Fără tracking. Doar GSC.</span>
+          <span>🌍 Clienți din toată lumea</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="/contact">Cere ofertă</a>
+          <a class="btn btn-secondary" href="/studii-de-caz">Vezi rezultate</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <picture>
+          <source srcset="/img/hero-device-mockup.jpg" type="image/jpeg">
+          <img
+            src="/img/hero-device-mockup.jpg"
+            alt="Design web premium pe laptop — ZypheroLab"
+            width="600"
+            height="600"
+            loading="eager"
+            decoding="async"
+            class="hero-mockup-img"
+          >
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICII -->
+  <section class="services reveal" aria-labelledby="services-title">
+    <div class="section-inner">
+      <h2 id="services-title">Ce primești</h2>
+      <div class="cards cards--3">
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🎯</span>
+          <h3>Site axat pe conversie</h3>
+          <p>Structură comercială clară, ierarhie CTA puternică și UX mobile-first — construit să transforme vizitatorii în clienți.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🔍</span>
+          <h3>SEO tehnic</h3>
+          <p>Canonical, hreflang, schema markup, Core Web Vitals și configurare indexare — toate rezolvate din prima zi.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">📈</span>
+          <h3>Iterație pentru creștere</h3>
+          <p>Sprinturi lunare de optimizare pe baza datelor GSC — fără bloat de analytics, doar semnale relevante.</p>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a class="btn btn-secondary" href="/servicii-web">Toate serviciile →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREȚURI -->
+  <section class="pricing pricing--strip reveal" aria-labelledby="pricing-title">
+    <div class="section-inner">
+      <h2 id="pricing-title">Prețuri transparente</h2>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <h3>Starter</h3>
+          <div class="pricing-price">€300</div>
+          <ul class="pricing-features">
+            <li>Landing page complet</li>
+            <li>SEO tehnic de bază</li>
+            <li>Formular + WhatsApp</li>
+            <li>Live în 3-5 zile</li>
+          </ul>
+          <a class="btn" href="/contact">Alege Starter</a>
+        </article>
+        <article class="pricing-card pricing-card--featured">
+          <div class="pricing-badge">Cel mai popular</div>
+          <h3>Growth</h3>
+          <div class="pricing-price">€600</div>
+          <ul class="pricing-features">
+            <li>Site multi-pagină</li>
+            <li>SEO tehnic avansat</li>
+            <li>Raportare KPI via GSC</li>
+            <li>Suport prioritar 3 luni</li>
+          </ul>
+          <a class="btn" href="/contact">Alege Growth</a>
+        </article>
+        <article class="pricing-card">
+          <h3>Custom</h3>
+          <div class="pricing-price">La cerere</div>
+          <ul class="pricing-features">
+            <li>E-commerce sau aplicație</li>
+            <li>Integrări API</li>
+            <li>Timeline flexibil</li>
+            <li>Suport dedicat</li>
+          </ul>
+          <a class="btn" href="/contact">Cere ofertă</a>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a class="btn btn-secondary" href="/preturi-web">Detalii complete prețuri →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTOFOLIU -->
+  <section class="portfolio reveal" aria-labelledby="portfolio-title">
+    <div class="section-inner">
+      <h2 id="portfolio-title">Proiecte livrate</h2>
+      <div class="portfolio-grid">
+        <article class="portfolio-item">
+          <h3>Landing page restaurant</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Provocare:</span> Site lent pe mobil; rezervările se pierdeau la telefon.</li>
+            <li><span class="portfolio-case-type">Soluție:</span> Landing mobile-first cu meniu clar și CTA rezervare.</li>
+            <li><span class="portfolio-case-type">Rezultat:</span> Un singur flux de contact; experiență mobilă stabilă.</li>
+          </ul>
+        </article>
+        <article class="portfolio-item">
+          <h3>Site cabinet avocatură</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Provocare:</span> Servicii neclar comunicate; încredere scăzută online.</li>
+            <li><span class="portfolio-case-type">Soluție:</span> Pagina servicii + formular programări + SEO local.</li>
+            <li><span class="portfolio-case-type">Rezultat:</span> Mesaj profesional și cale clară de contact.</li>
+          </ul>
+        </article>
+        <article class="portfolio-item">
+          <h3>Redesign e-commerce</h3>
+          <ul class="portfolio-case">
+            <li><span class="portfolio-case-type">Provocare:</span> Abandonare coș ridicată; experiență mobilă slabă.</li>
+            <li><span class="portfolio-case-type">Soluție:</span> Redesign checkout + pagini produs axate pe conversie.</li>
+            <li><span class="portfolio-case-type">Rezultat:</span> Estimat +40% vânzări după lansare.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="section-cta">
+        <a class="btn btn-secondary" href="/studii-de-caz">Toate studiile de caz →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq reveal" aria-labelledby="faq-title">
+    <div class="section-inner">
+      <h2 id="faq-title">Întrebări frecvente</h2>
+      <div class="cards cards--2">
+        <article class="card">
+          <h3>Cât costă un site web?</h3>
+          <p>Landing page de la €300, site multi-pagină de la €600. Prețul final depinde de complexitate și scope.</p>
+        </article>
+        <article class="card">
+          <h3>Cât durează livrarea?</h3>
+          <p>Pentru un scope standard, prima versiune funcțională este livrată în 3-5 zile lucrătoare. Proiectele complexe sunt planificate împreună.</p>
+        </article>
+        <article class="card">
+          <h3>Lucrați și cu clienți internaționali?</h3>
+          <p>Da. 100% remote, clienți din toată lumea. Comunicare în română sau engleză. Același termen de livrare indiferent de locație.</p>
+        </article>
+        <article class="card">
+          <h3>Ce folosiți pentru analytics?</h3>
+          <p>Nu instalăm scripturi de tracking greoaie. Rezultatele sunt urmărite prin Google Search Console — fără date third-party.</p>
+        </article>
+        <article class="card">
+          <h3>Pot edita conținutul mai târziu?</h3>
+          <p>Da. Livrăm cod sursă curat, documentat. Poți edita singur sau ne poți solicita modificări oricând.</p>
+        </article>
+        <article class="card">
+          <h3>Am nevoie de ceva personalizat?</h3>
+          <p>Contactează-ne cu cerințele tale și vom oferi o soluție custom — fie că e un magazin online, aplicație web sau integrare complexă.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section reveal" aria-labelledby="cta-title">
+    <div class="section-inner cta-inner">
+      <h2 id="cta-title">Gata să crești?</h2>
+      <p>Spune-ne obiectivul principal și răspundem cu scope și estimare în 24 de ore lucrătoare.</p>
+      <div class="hero-actions">
+        <a class="btn" href="/contact">Cere ofertă</a>
+        <a class="btn btn-secondary" href="https://wa.me/40747821384?text=Bună%2C%20vreau%20o%20ofertă%20pentru%20un%20site.">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -20,4 +20,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://zypherolab.com/sitemap.xml
+Sitemap: https://zypherolab.com/sitemap-index.xml
