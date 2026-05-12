@@ -37,21 +37,8 @@ jobs:
         run: npm run build
         working-directory: _astro-src
 
-      - name: Copy static assets to dist
+      - name: Copy root files to dist
         run: |
-          # Copy fonts (self-hosted)
-          cp -r fonts _astro-src/dist/fonts
-          # Copy CSS (legacy static files reused)
-          cp -r css _astro-src/dist/css
-          # Copy JS (vanilla scripts reused across pages)
-          cp -r js _astro-src/dist/js
-          # Copy images
-          cp -r img _astro-src/dist/img
-          # Copy favicons + root files
-          cp favicon.ico _astro-src/dist/ 2>/dev/null || true
-          cp favicon-32.png _astro-src/dist/ 2>/dev/null || true
-          cp favicon-192.png _astro-src/dist/ 2>/dev/null || true
-          cp apple-touch-icon.png _astro-src/dist/ 2>/dev/null || true
           cp CNAME _astro-src/dist/
           cp robots.txt _astro-src/dist/
           cp llms.txt _astro-src/dist/
