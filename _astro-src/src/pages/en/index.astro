@@ -76,10 +76,17 @@ const schema = JSON.stringify({
       "@id": "https://zypherolab.com/en/#faq",
       "mainEntity": [
         { "@type": "Question", "name": "How much does a website cost?", "acceptedAnswer": { "@type": "Answer", "text": "Landing page from €300, full multi-page site from €600. Final price depends on scope and complexity." } },
-        { "@type": "Question", "name": "What is included in the Starter package?", "acceptedAnswer": { "@type": "Answer", "text": "Strategic page structure, responsive mobile-first design, lead form, baseline technical SEO, and delivery in 3-5 business days." } },
-        { "@type": "Question", "name": "How does the website help me get more clients?", "acceptedAnswer": { "@type": "Answer", "text": "Through clear messaging, conversion-focused architecture, and CTA flows that reduce friction. We track results via Google Search Console." } },
-        { "@type": "Question", "name": "Do you work with international clients?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work fully remote with clients worldwide. Communication in English or Romanian. Same delivery timeline regardless of location." } },
-        { "@type": "Question", "name": "Can I edit content later?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We deliver clean, documented source code. You can edit it yourself or request changes from us." } }
+        { "@type": "Question", "name": "How fast is delivery?", "acceptedAnswer": { "@type": "Answer", "text": "For standard scope, the first functional version is delivered in 3-5 business days. Complex projects are scoped with you in advance." } },
+        { "@type": "Question", "name": "Can I see examples of delivered sites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our portfolio includes links to live sites, active in production, not just static images." } },
+        { "@type": "Question", "name": "Is hosting and domain included in the price?", "acceptedAnswer": { "@type": "Answer", "text": "No. We recommend buying the domain and hosting under your name for 100% control. We guide you through the process for free." } },
+        { "@type": "Question", "name": "What happens after the 3 months of support?", "acceptedAnswer": { "@type": "Answer", "text": "The site will continue to work perfectly. For additional maintenance or new developments, we can discuss a recurring plan." } },
+        { "@type": "Question", "name": "Do you redesign existing websites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but we often rewrite the code from scratch to guarantee maximum performance, while keeping the old URLs for SEO." } },
+        { "@type": "Question", "name": "How does the payment work?", "acceptedAnswer": { "@type": "Answer", "text": "A 50% upfront payment is required at signing to reserve time, and the remaining 50% upon project delivery and launch." } },
+        { "@type": "Question", "name": "Do you work with international clients?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fully remote, clients worldwide. Communication in English or Romanian. Same delivery timeline regardless of location." } },
+        { "@type": "Question", "name": "What technologies do you use?", "acceptedAnswer": { "@type": "Answer", "text": "We build extremely fast websites using Astro, semantic HTML, and modern CSS. We do not use bloated platforms like WordPress." } },
+        { "@type": "Question", "name": "What about analytics?", "acceptedAnswer": { "@type": "Answer", "text": "We don't install bloated tracking scripts. Results are tracked via Google Search Console — no third-party data sharing." } },
+        { "@type": "Question", "name": "Can I edit content later?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We deliver clean, documented source code. You can edit it yourself or request changes from us at any time." } },
+        { "@type": "Question", "name": "What if I need something custom?", "acceptedAnswer": { "@type": "Answer", "text": "Contact us with your requirements and we'll scope a custom solution — whether it's an e-commerce store or a web app." } }
       ]
     }
   ]
@@ -94,6 +101,7 @@ const schema = JSON.stringify({
   hreflangRo="https://zypherolab.com/"
   hreflangEn="https://zypherolab.com/en/"
   ogImageAlt="ZypheroLab — premium websites that win clients worldwide"
+  keywords="website creation, web design, web development, technical seo, landing page, create online store, presentation website"
   schemaJson={schema}
 >
   <!-- HERO — 2-column, mobile-first -->
@@ -205,6 +213,30 @@ const schema = JSON.stringify({
     </div>
   </section>
 
+  <!-- WHY US -->
+  <section class="features reveal" aria-labelledby="why-us-title">
+    <div class="section-inner">
+      <h2 id="why-us-title">Why work with us?</h2>
+      <div class="cards cards--3">
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🤝</span>
+          <h3>No middlemen</h3>
+          <p>You communicate directly with the developer writing your code. No project managers, no lost information, and an extremely fast response time.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">⚡</span>
+          <h3>Raw performance</h3>
+          <p>Real loading speeds, not just artificial scores. Our custom-written sites consistently outperform heavy template-based solutions.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🔓</span>
+          <h3>Zero dependencies</h3>
+          <p>You pay for the site once and own it 100%. We don't lock you into mandatory subscriptions, hidden platform costs, or encrypted code.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- PORTFOLIO STRIP -->
   <section class="portfolio reveal" aria-labelledby="portfolio-title">
     <div class="section-inner">
@@ -255,8 +287,32 @@ const schema = JSON.stringify({
           <p>For standard scope, the first functional version is delivered in 3-5 business days. Complex projects are scoped with you in advance.</p>
         </article>
         <article class="card">
+          <h3>Can I see examples of delivered sites?</h3>
+          <p>Yes. Our portfolio includes links to live sites, active in production, not just static images.</p>
+        </article>
+        <article class="card">
+          <h3>Is hosting and domain included in the price?</h3>
+          <p>No. We recommend buying the domain and hosting under your name for 100% control. We guide you through the process for free.</p>
+        </article>
+        <article class="card">
+          <h3>What happens after the 3 months of support?</h3>
+          <p>The site will continue to work perfectly. For additional maintenance or new developments, we can discuss a recurring plan.</p>
+        </article>
+        <article class="card">
+          <h3>Do you redesign existing websites?</h3>
+          <p>Yes, but we often rewrite the code from scratch to guarantee maximum performance, while keeping the old URLs for SEO.</p>
+        </article>
+        <article class="card">
+          <h3>How does the payment work?</h3>
+          <p>A 50% upfront payment is required at signing to reserve time, and the remaining 50% upon project delivery and launch.</p>
+        </article>
+        <article class="card">
           <h3>Do you work with international clients?</h3>
           <p>Yes. Fully remote, clients worldwide. Communication in English or Romanian. Same delivery timeline regardless of location.</p>
+        </article>
+        <article class="card">
+          <h3>What technologies do you use?</h3>
+          <p>We build extremely fast websites using Astro, semantic HTML, and modern CSS. We do not use bloated platforms like WordPress.</p>
         </article>
         <article class="card">
           <h3>What about analytics?</h3>
@@ -268,7 +324,7 @@ const schema = JSON.stringify({
         </article>
         <article class="card">
           <h3>What if I need something custom?</h3>
-          <p>Contact us with your requirements and we'll scope a custom solution — whether it's an e-commerce store, web app, or complex integration.</p>
+          <p>Contact us with your requirements and we'll scope a custom solution — whether it's an e-commerce store or a web app.</p>
         </article>
       </div>
     </div>

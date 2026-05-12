@@ -16,6 +16,7 @@ export interface Props {
   ogImageAlt?: string;
   noindex?: boolean;
   schemaJson?: string;
+  keywords?: string;
 }
 
 const {
@@ -30,6 +31,7 @@ const {
   ogImageAlt,
   noindex,
   schemaJson,
+  keywords,
 } = Astro.props;
 ---
 
@@ -47,6 +49,7 @@ const {
     ogImageAlt={ogImageAlt}
     noindex={noindex}
     schemaJson={schemaJson}
+    keywords={keywords}
   />
 </head>
 <body>

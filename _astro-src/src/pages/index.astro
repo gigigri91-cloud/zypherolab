@@ -76,10 +76,18 @@ const schema = JSON.stringify({
       "@type": "FAQPage",
       "@id": "https://zypherolab.com/#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "Cât costă un site web?", "acceptedAnswer": { "@type": "Answer", "text": "Landing page de la €300, site multi-pagină de la €600. Prețul final depinde de complexitate și scopul proiectului." } },
-        { "@type": "Question", "name": "Cât durează livrarea?", "acceptedAnswer": { "@type": "Answer", "text": "Pentru un scope standard, prima versiune funcțională este livrată în 3-5 zile lucrătoare." } },
-        { "@type": "Question", "name": "Cum mă ajută site-ul să obțin mai mulți clienți?", "acceptedAnswer": { "@type": "Answer", "text": "Prin mesaje clare, arhitectură axată pe conversie și fluxuri CTA care reduc fricțiunea. Urmărim rezultatele prin Google Search Console." } },
-        { "@type": "Question", "name": "Pot edita conținutul ulterior?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Livrăm cod sursă curat, documentat. Poți edita singur sau ne poți solicita modificări oricând." } }
+        { "@type": "Question", "name": "Cât costă un site web?", "acceptedAnswer": { "@type": "Answer", "text": "Landing page de la €300, site multi-pagină de la €600. Prețul final depinde de complexitate și scope." } },
+        { "@type": "Question", "name": "Cât durează livrarea?", "acceptedAnswer": { "@type": "Answer", "text": "Pentru un scope standard, prima versiune funcțională este livrată în 3-5 zile lucrătoare. Proiectele complexe sunt planificate împreună." } },
+        { "@type": "Question", "name": "Pot vedea exemple de site-uri livrate?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Portofoliul nostru include linkuri către site-uri live, active în producție, nu doar imagini statice." } },
+        { "@type": "Question", "name": "Includeți hosting și domeniu în preț?", "acceptedAnswer": { "@type": "Answer", "text": "Nu. Recomandăm ca domeniul și hosting-ul să fie achiziționate pe numele tău pentru control 100%. Te ghidăm gratuit în proces." } },
+        { "@type": "Question", "name": "Ce se întâmplă după cele 3 luni de suport?", "acceptedAnswer": { "@type": "Answer", "text": "Site-ul continuă să funcționeze perfect. Pentru mentenanță sau dezvoltări noi, putem discuta un plan recurent." } },
+        { "@type": "Question", "name": "Faceți redesign pe site-uri existente?", "acceptedAnswer": { "@type": "Answer", "text": "Da, dar adesea rescriem codul de la zero pentru a garanta performanța maximă, păstrând URL-urile vechi." } },
+        { "@type": "Question", "name": "Cum funcționează plata?", "acceptedAnswer": { "@type": "Answer", "text": "Se achită un avans de 50% la semnare pentru rezervarea timpului, iar restul de 50% la lansarea proiectului." } },
+        { "@type": "Question", "name": "Lucrați și cu clienți internaționali?", "acceptedAnswer": { "@type": "Answer", "text": "Da. 100% remote, clienți din toată lumea. Comunicare în română sau engleză." } },
+        { "@type": "Question", "name": "Ce tehnologii folosiți?", "acceptedAnswer": { "@type": "Answer", "text": "Dezvoltăm site-uri extrem de rapide folosind Astro, HTML semantic și CSS modern. Nu folosim platforme greoaie precum WordPress." } },
+        { "@type": "Question", "name": "Ce folosiți pentru analytics?", "acceptedAnswer": { "@type": "Answer", "text": "Nu instalăm scripturi de tracking greoaie. Urmărim rezultatele prin Google Search Console." } },
+        { "@type": "Question", "name": "Pot edita conținutul mai târziu?", "acceptedAnswer": { "@type": "Answer", "text": "Da. Livrăm cod sursă curat, documentat. Poți edita singur sau ne poți solicita modificări." } },
+        { "@type": "Question", "name": "Am nevoie de ceva personalizat?", "acceptedAnswer": { "@type": "Answer", "text": "Contactează-ne cu cerințele tale și vom oferi o soluție custom, fie magazin online sau aplicație web." } }
       ]
     }
   ]
@@ -94,6 +102,7 @@ const schema = JSON.stringify({
   hreflangRo="https://zypherolab.com/"
   hreflangEn="https://zypherolab.com/en/"
   ogImageAlt="ZypheroLab — site-uri premium care aduc clienți"
+  keywords="creare site web, web design, dezvoltare web, seo tehnic, landing page, creare magazin online, site de prezentare"
   schemaJson={schema}
 >
   <!-- HERO -->
@@ -205,6 +214,30 @@ const schema = JSON.stringify({
     </div>
   </section>
 
+  <!-- DE CE NOI -->
+  <section class="features reveal" aria-labelledby="why-us-title">
+    <div class="section-inner">
+      <h2 id="why-us-title">De ce să colaborezi cu noi?</h2>
+      <div class="cards cards--3">
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🤝</span>
+          <h3>Fără intermediari</h3>
+          <p>Comunici direct cu dezvoltatorul care îți scrie codul. Fără project manageri, fără informații pierdute și cu un timp de răspuns extrem de scurt.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">⚡</span>
+          <h3>Performanță brută</h3>
+          <p>Viteze de încărcare reale, nu doar scoruri artificiale. Site-urile noastre scrise custom depășesc constant soluțiile greoaie bazate pe template-uri.</p>
+        </article>
+        <article class="card card--icon">
+          <span class="card-icon" aria-hidden="true">🔓</span>
+          <h3>Zero dependențe</h3>
+          <p>Plătești site-ul o singură dată și îți aparține 100%. Nu te blocăm în abonamente obligatorii, costuri ascunse de platformă sau cod încuiat.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- PORTOFOLIU -->
   <section class="portfolio reveal" aria-labelledby="portfolio-title">
     <div class="section-inner">
@@ -255,8 +288,32 @@ const schema = JSON.stringify({
           <p>Pentru un scope standard, prima versiune funcțională este livrată în 3-5 zile lucrătoare. Proiectele complexe sunt planificate împreună.</p>
         </article>
         <article class="card">
+          <h3>Pot vedea exemple de site-uri livrate?</h3>
+          <p>Da. Portofoliul nostru include linkuri către site-uri live, active în producție, nu doar imagini sau mock-up-uri statice.</p>
+        </article>
+        <article class="card">
+          <h3>Includeți hosting și domeniu în preț?</h3>
+          <p>Nu. Recomandăm ca domeniul și hosting-ul să fie achiziționate pe numele tău pentru a avea control 100%. Te putem ghida gratuit în acest proces.</p>
+        </article>
+        <article class="card">
+          <h3>Ce se întâmplă după cele 3 luni de suport?</h3>
+          <p>Site-ul va continua să funcționeze perfect. Dacă dorești mentenanță suplimentară sau dezvoltări noi, putem discuta un plan recurent.</p>
+        </article>
+        <article class="card">
+          <h3>Faceți redesign pe site-uri existente?</h3>
+          <p>Da, dar de cele mai multe ori rescriem codul de la zero pentru a garanta performanța, păstrând în același timp URL-urile vechi pentru SEO.</p>
+        </article>
+        <article class="card">
+          <h3>Cum funcționează plata?</h3>
+          <p>Se achită un avans de 50% la semnarea contractului pentru rezervarea timpului, iar restul de 50% la livrarea și lansarea proiectului.</p>
+        </article>
+        <article class="card">
           <h3>Lucrați și cu clienți internaționali?</h3>
           <p>Da. 100% remote, clienți din toată lumea. Comunicare în română sau engleză. Același termen de livrare indiferent de locație.</p>
+        </article>
+        <article class="card">
+          <h3>Ce tehnologii folosiți?</h3>
+          <p>Dezvoltăm site-uri extrem de rapide folosind Astro, HTML semantic, CSS modern și JavaScript minim. Nu folosim platforme greoaie.</p>
         </article>
         <article class="card">
           <h3>Ce folosiți pentru analytics?</h3>
